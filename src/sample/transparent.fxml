@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderPane" onDragDetected="#dragWindows" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.131" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <HBox fx:id="hBox" alignment="TOP_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" BorderPane.alignment="TOP_RIGHT">
+         <children>
+            <MaterialDesignIconView fx:id="btnMaximize" fill="#8ea4a2" glyphName="ARROW_EXPAND" onMouseClicked="#btnMaximizeClicked" size="20" />
+            <MaterialDesignIconView fx:id="btnExit" fill="#8ea4a2" glyphName="CLOSE" onMouseClicked="#btnExitClicked" size="20" />
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <VBox fx:id="vBox" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" text="Outside Temperature" textAlignment="CENTER" textFill="#4ea68f">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" top="20.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="lblOutsideTemp" alignment="CENTER" contentDisplay="CENTER" text="--" textAlignment="CENTER" textFill="#96ebd4">
+               <font>
+                  <Font size="50.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" />
+               </VBox.margin>
+            </Label>
+            <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" text="Inside Temperature" textAlignment="CENTER" textFill="#4ea68f">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" top="40.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="lblInsideTemp" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" text="--" textAlignment="CENTER" textFill="#99eed8">
+               <font>
+                  <Font size="50.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
