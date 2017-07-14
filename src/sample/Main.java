@@ -29,7 +29,6 @@ public class Main extends Application {
         * If this is not done, it gives a cryptic null exception
         * */
         fxmlLoader.setController(controller);
-
         Parent root = fxmlLoader.load();
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root));

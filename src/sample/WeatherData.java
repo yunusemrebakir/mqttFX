@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.scene.control.Alert;
 import org.eclipse.paho.client.mqttv3.*;
 
 import java.util.ArrayList;
@@ -70,6 +71,8 @@ public class WeatherData implements MqttCallback {
             System.out.println("Connected");
             sampleClient.subscribe(topics);
 
+
+
         } catch (MqttException me) {
             System.out.println("reason " + me.getReasonCode());
             System.out.println("msg " + me.getMessage());
@@ -77,7 +80,22 @@ public class WeatherData implements MqttCallback {
             System.out.println("cause " + me.getCause());
             System.out.println("excep " + me);
             me.printStackTrace();
+
+
+            //If host is unreachable notify user
+            if(me.getReasonCode() == 0){
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error Dialog");
+                alert.setResizable(true);
+                alert.setHeaderText("Couldn't connect to server");
+                alert.setContentText(me.getCause() +"\n" +me);
+                alert.showAndWait();
+            }
+
+
+
         }
+
 
 
     }
